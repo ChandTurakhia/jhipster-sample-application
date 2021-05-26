@@ -1,0 +1,99 @@
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.myapp,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Person {
+  version Long,
+  stateCode String,
+  dateOfBirth Instant,
+  dateOfDeath Instant,
+  genderTypeCode String 
+}
+
+entity PersonDetail {
+ maritalTypeStatusCode String,
+ raceEthinicityCode String,
+ citizenshipStatusCode String,
+ pregnant Boolean,
+ childrenCount Long,
+ height String,
+ weight Integer
+ }
+
+relationship OneToOne {
+ PersonDetail to Person  
+}
+
+entity PersonName {
+ personId Long,
+ firstName String,
+ middleName String,
+ lastName   String,
+ secondLastName String,
+ preferredName String,
+ prefixCode String,
+ suffixCode String,
+ validFrom Instant,
+ validTo Instant
+}
+relationship OneToMany {
+  PersonName to Person{names}
+}
+
+entity PersonAddress {
+addressTypeCode String,
+validFrom Instant,
+validTo Instant
+}
+
+entity AddressHeader {
+typeCode String,
+standardized Boolean,
+addressLine1 String,
+addressLine2 String,
+addressLine3 String,
+cityName     String,
+countyName   String,
+stateCode    String,
+zipCode      String,
+countryName  String
+}
+
+relationship OneToOne {
+ AddressHeader to PersonAddress{address} 
+}
+
+entity LocationHeader {
+latitude Long,
+longitude Long,
+elevation Long
+}
+
+relationship OneToOne {
+ LocationHeader to AddressHeader{location}
+}
+
+relationship OneToMany {
+  PersonAddress to Person{addresses}  
+}
+
+entity PersonLanguage {
+ languageCode String,
+ languageUsageCode String,
+ preferredLanguage Boolean
+}
+
+relationship OneToMany {
+  PersonLanguage to Person{languages} 
+}
+
+
+
