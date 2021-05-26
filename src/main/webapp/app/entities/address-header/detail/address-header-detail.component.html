@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="addressHeader">
+      <h2 data-cy="addressHeaderDetailsHeading"><span jhiTranslate="myApp.addressHeader.detail.title">Address Header</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ addressHeader.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.typeCode">Type Code</span></dt>
+        <dd>
+          <span>{{ addressHeader.typeCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.standardized">Standardized</span></dt>
+        <dd>
+          <span>{{ addressHeader.standardized }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.addressLine1">Address Line 1</span></dt>
+        <dd>
+          <span>{{ addressHeader.addressLine1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.addressLine2">Address Line 2</span></dt>
+        <dd>
+          <span>{{ addressHeader.addressLine2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.addressLine3">Address Line 3</span></dt>
+        <dd>
+          <span>{{ addressHeader.addressLine3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.cityName">City Name</span></dt>
+        <dd>
+          <span>{{ addressHeader.cityName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.countyName">County Name</span></dt>
+        <dd>
+          <span>{{ addressHeader.countyName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.stateCode">State Code</span></dt>
+        <dd>
+          <span>{{ addressHeader.stateCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.zipCode">Zip Code</span></dt>
+        <dd>
+          <span>{{ addressHeader.zipCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.countryName">Country Name</span></dt>
+        <dd>
+          <span>{{ addressHeader.countryName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.addressHeader.personAddress">Person Address</span></dt>
+        <dd>
+          <div *ngIf="addressHeader.personAddress">
+            <a [routerLink]="['/person-address', addressHeader.personAddress?.id, 'view']">{{ addressHeader.personAddress?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/address-header', addressHeader.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

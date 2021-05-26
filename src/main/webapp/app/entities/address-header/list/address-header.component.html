@@ -1,0 +1,102 @@
+<div>
+  <h2 id="page-heading" data-cy="AddressHeaderHeading">
+    <span jhiTranslate="myApp.addressHeader.home.title">Address Headers</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="myApp.addressHeader.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-address-header"
+        [routerLink]="['/address-header/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="myApp.addressHeader.home.createLabel"> Create a new Address Header </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="addressHeaders?.length === 0">
+    <span jhiTranslate="myApp.addressHeader.home.notFound">No addressHeaders found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="addressHeaders && addressHeaders.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.typeCode">Type Code</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.standardized">Standardized</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.addressLine1">Address Line 1</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.addressLine2">Address Line 2</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.addressLine3">Address Line 3</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.cityName">City Name</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.countyName">County Name</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.stateCode">State Code</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.zipCode">Zip Code</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.countryName">Country Name</span></th>
+          <th scope="col"><span jhiTranslate="myApp.addressHeader.personAddress">Person Address</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let addressHeader of addressHeaders; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/address-header', addressHeader.id, 'view']">{{ addressHeader.id }}</a>
+          </td>
+          <td>{{ addressHeader.typeCode }}</td>
+          <td>{{ addressHeader.standardized }}</td>
+          <td>{{ addressHeader.addressLine1 }}</td>
+          <td>{{ addressHeader.addressLine2 }}</td>
+          <td>{{ addressHeader.addressLine3 }}</td>
+          <td>{{ addressHeader.cityName }}</td>
+          <td>{{ addressHeader.countyName }}</td>
+          <td>{{ addressHeader.stateCode }}</td>
+          <td>{{ addressHeader.zipCode }}</td>
+          <td>{{ addressHeader.countryName }}</td>
+          <td>
+            <div *ngIf="addressHeader.personAddress">
+              <a [routerLink]="['/person-address', addressHeader.personAddress?.id, 'view']">{{ addressHeader.personAddress?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/address-header', addressHeader.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/address-header', addressHeader.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(addressHeader)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

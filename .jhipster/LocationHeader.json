@@ -1,0 +1,36 @@
+{
+  "name": "LocationHeader",
+  "fields": [
+    {
+      "fieldName": "latitude",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "elevation",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "addressHeader",
+      "otherEntityRelationshipName": "locationHeader",
+      "relationshipName": "addressHeader",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "location_header",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["myApp"],
+  "changelogDate": "20210526161455"
+}

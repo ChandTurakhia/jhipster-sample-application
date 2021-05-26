@@ -1,0 +1,27 @@
+{
+  "myApp": {
+    "locationHeader": {
+      "home": {
+        "title": "Location Headers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Location Header",
+        "createOrEditLabel": "Create or edit a Location Header",
+        "notFound": "No Location Headers found"
+      },
+      "created": "A new Location Header is created with identifier {{ param }}",
+      "updated": "A Location Header is updated with identifier {{ param }}",
+      "deleted": "A Location Header is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location Header {{ id }}?"
+      },
+      "detail": {
+        "title": "Location Header"
+      },
+      "id": "ID",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "elevation": "Elevation",
+      "addressHeader": "Address Header"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Person",
+  "fields": [
+    {
+      "fieldName": "version",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "stateCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateOfDeath",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "genderTypeCode",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "personDetails",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "personDetails",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "personName",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "personName"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "personAddress",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "personAddress"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "personLanguage",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "personLanguage"
+    }
+  ],
+  "entityTableName": "person",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["myApp"],
+  "changelogDate": "20210526161450"
+}

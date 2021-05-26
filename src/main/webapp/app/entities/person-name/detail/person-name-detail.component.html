@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personName">
+      <h2 data-cy="personNameDetailsHeading"><span jhiTranslate="myApp.personName.detail.title">Person Name</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personName.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.personId">Person Id</span></dt>
+        <dd>
+          <span>{{ personName.personId }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ personName.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.middleName">Middle Name</span></dt>
+        <dd>
+          <span>{{ personName.middleName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ personName.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.secondLastName">Second Last Name</span></dt>
+        <dd>
+          <span>{{ personName.secondLastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.preferredName">Preferred Name</span></dt>
+        <dd>
+          <span>{{ personName.preferredName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.prefixCode">Prefix Code</span></dt>
+        <dd>
+          <span>{{ personName.prefixCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.suffixCode">Suffix Code</span></dt>
+        <dd>
+          <span>{{ personName.suffixCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.validFrom">Valid From</span></dt>
+        <dd>
+          <span>{{ personName.validFrom | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personName.validTo">Valid To</span></dt>
+        <dd>
+          <span>{{ personName.validTo | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/person-name', personName.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

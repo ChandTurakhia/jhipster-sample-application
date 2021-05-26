@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="locationHeader">
+      <h2 data-cy="locationHeaderDetailsHeading"><span jhiTranslate="myApp.locationHeader.detail.title">Location Header</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ locationHeader.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.locationHeader.latitude">Latitude</span></dt>
+        <dd>
+          <span>{{ locationHeader.latitude }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.locationHeader.longitude">Longitude</span></dt>
+        <dd>
+          <span>{{ locationHeader.longitude }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.locationHeader.elevation">Elevation</span></dt>
+        <dd>
+          <span>{{ locationHeader.elevation }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.locationHeader.addressHeader">Address Header</span></dt>
+        <dd>
+          <div *ngIf="locationHeader.addressHeader">
+            <a [routerLink]="['/address-header', locationHeader.addressHeader?.id, 'view']">{{ locationHeader.addressHeader?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/location-header', locationHeader.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

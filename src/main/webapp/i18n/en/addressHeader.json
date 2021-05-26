@@ -1,0 +1,35 @@
+{
+  "myApp": {
+    "addressHeader": {
+      "home": {
+        "title": "Address Headers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Address Header",
+        "createOrEditLabel": "Create or edit a Address Header",
+        "notFound": "No Address Headers found"
+      },
+      "created": "A new Address Header is created with identifier {{ param }}",
+      "updated": "A Address Header is updated with identifier {{ param }}",
+      "deleted": "A Address Header is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Address Header {{ id }}?"
+      },
+      "detail": {
+        "title": "Address Header"
+      },
+      "id": "ID",
+      "typeCode": "Type Code",
+      "standardized": "Standardized",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "addressLine3": "Address Line 3",
+      "cityName": "City Name",
+      "countyName": "County Name",
+      "stateCode": "State Code",
+      "zipCode": "Zip Code",
+      "countryName": "Country Name",
+      "personAddress": "Person Address",
+      "locationHeader": "Location Header"
+    }
+  }
+}

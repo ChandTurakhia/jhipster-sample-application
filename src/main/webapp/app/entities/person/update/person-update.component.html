@@ -1,0 +1,147 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-person-heading" data-cy="PersonCreateUpdateHeading" jhiTranslate="myApp.person.home.createOrEditLabel">
+        Create or edit a Person
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.version" for="field_version">Version</label>
+          <input type="number" class="form-control" name="version" id="field_version" data-cy="version" formControlName="version" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.stateCode" for="field_stateCode">State Code</label>
+          <input type="text" class="form-control" name="stateCode" id="field_stateCode" data-cy="stateCode" formControlName="stateCode" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.dateOfBirth" for="field_dateOfBirth">Date Of Birth</label>
+          <div class="d-flex">
+            <input
+              id="field_dateOfBirth"
+              data-cy="dateOfBirth"
+              type="datetime-local"
+              class="form-control"
+              name="dateOfBirth"
+              formControlName="dateOfBirth"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.dateOfDeath" for="field_dateOfDeath">Date Of Death</label>
+          <div class="d-flex">
+            <input
+              id="field_dateOfDeath"
+              data-cy="dateOfDeath"
+              type="datetime-local"
+              class="form-control"
+              name="dateOfDeath"
+              formControlName="dateOfDeath"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.genderTypeCode" for="field_genderTypeCode">Gender Type Code</label>
+          <input
+            type="text"
+            class="form-control"
+            name="genderTypeCode"
+            id="field_genderTypeCode"
+            data-cy="genderTypeCode"
+            formControlName="genderTypeCode"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.personName" for="field_personName">Person Name</label>
+          <select class="form-control" id="field_personName" data-cy="personName" name="personName" formControlName="personName">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                personNameOption.id === editForm.get('personName')!.value?.id ? editForm.get('personName')!.value : personNameOption
+              "
+              *ngFor="let personNameOption of personNamesSharedCollection; trackBy: trackPersonNameById"
+            >
+              {{ personNameOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.personAddress" for="field_personAddress">Person Address</label>
+          <select
+            class="form-control"
+            id="field_personAddress"
+            data-cy="personAddress"
+            name="personAddress"
+            formControlName="personAddress"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                personAddressOption.id === editForm.get('personAddress')!.value?.id
+                  ? editForm.get('personAddress')!.value
+                  : personAddressOption
+              "
+              *ngFor="let personAddressOption of personAddressesSharedCollection; trackBy: trackPersonAddressById"
+            >
+              {{ personAddressOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.person.personLanguage" for="field_personLanguage">Person Language</label>
+          <select
+            class="form-control"
+            id="field_personLanguage"
+            data-cy="personLanguage"
+            name="personLanguage"
+            formControlName="personLanguage"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                personLanguageOption.id === editForm.get('personLanguage')!.value?.id
+                  ? editForm.get('personLanguage')!.value
+                  : personLanguageOption
+              "
+              *ngFor="let personLanguageOption of personLanguagesSharedCollection; trackBy: trackPersonLanguageById"
+            >
+              {{ personLanguageOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

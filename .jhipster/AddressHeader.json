@@ -1,0 +1,71 @@
+{
+  "name": "AddressHeader",
+  "fields": [
+    {
+      "fieldName": "typeCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "standardized",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "addressLine1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLine2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLine3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cityName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "zipCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "personAddress",
+      "otherEntityRelationshipName": "addressHeader",
+      "relationshipName": "personAddress",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "locationHeader",
+      "otherEntityRelationshipName": "addressHeader",
+      "relationshipName": "locationHeader",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "address_header",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["myApp"],
+  "changelogDate": "20210526161454"
+}

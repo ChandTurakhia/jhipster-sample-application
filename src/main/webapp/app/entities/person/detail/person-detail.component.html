@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="person">
+      <h2 data-cy="personDetailsHeading"><span jhiTranslate="myApp.person.detail.title">Person</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ person.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.version">Version</span></dt>
+        <dd>
+          <span>{{ person.version }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.stateCode">State Code</span></dt>
+        <dd>
+          <span>{{ person.stateCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+          <span>{{ person.dateOfBirth | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.dateOfDeath">Date Of Death</span></dt>
+        <dd>
+          <span>{{ person.dateOfDeath | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.genderTypeCode">Gender Type Code</span></dt>
+        <dd>
+          <span>{{ person.genderTypeCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.personName">Person Name</span></dt>
+        <dd>
+          <div *ngIf="person.personName">
+            <a [routerLink]="['/person-name', person.personName?.id, 'view']">{{ person.personName?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.personAddress">Person Address</span></dt>
+        <dd>
+          <div *ngIf="person.personAddress">
+            <a [routerLink]="['/person-address', person.personAddress?.id, 'view']">{{ person.personAddress?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="myApp.person.personLanguage">Person Language</span></dt>
+        <dd>
+          <div *ngIf="person.personLanguage">
+            <a [routerLink]="['/person-language', person.personLanguage?.id, 'view']">{{ person.personLanguage?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/person', person.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

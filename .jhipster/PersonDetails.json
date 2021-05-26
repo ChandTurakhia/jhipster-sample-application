@@ -1,0 +1,52 @@
+{
+  "name": "PersonDetails",
+  "fields": [
+    {
+      "fieldName": "maritalTypeStatusCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "raceEthinicityCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "citizenshipStatusCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pregnant",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "childrenCount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "height",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "personDetails",
+      "relationshipName": "person",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "person_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["myApp"],
+  "changelogDate": "20210526161451"
+}

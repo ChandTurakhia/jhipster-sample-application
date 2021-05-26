@@ -1,0 +1,31 @@
+{
+  "myApp": {
+    "personDetails": {
+      "home": {
+        "title": "Person Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Person Details",
+        "createOrEditLabel": "Create or edit a Person Details",
+        "notFound": "No Person Details found"
+      },
+      "created": "A new Person Details is created with identifier {{ param }}",
+      "updated": "A Person Details is updated with identifier {{ param }}",
+      "deleted": "A Person Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Person Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Person Details"
+      },
+      "id": "ID",
+      "maritalTypeStatusCode": "Marital Type Status Code",
+      "raceEthinicityCode": "Race Ethinicity Code",
+      "citizenshipStatusCode": "Citizenship Status Code",
+      "pregnant": "Pregnant",
+      "childrenCount": "Children Count",
+      "height": "Height",
+      "weight": "Weight",
+      "person": "Person"
+    }
+  }
+}

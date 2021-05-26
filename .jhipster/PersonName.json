@@ -1,0 +1,63 @@
+{
+  "name": "PersonName",
+  "fields": [
+    {
+      "fieldName": "personId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "secondLastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preferredName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prefixCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suffixCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validFrom",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "validTo",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "personName",
+      "relationshipName": "person"
+    }
+  ],
+  "entityTableName": "person_name",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["myApp"],
+  "changelogDate": "20210526161452"
+}
