@@ -1,0 +1,35 @@
+{
+  "name": "PersonLanguage",
+  "fields": [
+    {
+      "fieldName": "languageCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "languageUsageCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preferredLanguage",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "personLanguage",
+      "relationshipName": "person"
+    }
+  ],
+  "entityTableName": "person_language",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["myApp"],
+  "changelogDate": "20210526161456"
+}

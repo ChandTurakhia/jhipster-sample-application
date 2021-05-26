@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personDetails">
+      <h2 data-cy="personDetailsDetailsHeading"><span jhiTranslate="myApp.personDetails.detail.title">Person Details</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personDetails.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.maritalTypeStatusCode">Marital Type Status Code</span></dt>
+        <dd>
+          <span>{{ personDetails.maritalTypeStatusCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.raceEthinicityCode">Race Ethinicity Code</span></dt>
+        <dd>
+          <span>{{ personDetails.raceEthinicityCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.citizenshipStatusCode">Citizenship Status Code</span></dt>
+        <dd>
+          <span>{{ personDetails.citizenshipStatusCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.pregnant">Pregnant</span></dt>
+        <dd>
+          <span>{{ personDetails.pregnant }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.childrenCount">Children Count</span></dt>
+        <dd>
+          <span>{{ personDetails.childrenCount }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.height">Height</span></dt>
+        <dd>
+          <span>{{ personDetails.height }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.weight">Weight</span></dt>
+        <dd>
+          <span>{{ personDetails.weight }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personDetails.person">Person</span></dt>
+        <dd>
+          <div *ngIf="personDetails.person">
+            <a [routerLink]="['/person', personDetails.person?.id, 'view']">{{ personDetails.person?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/person-details', personDetails.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

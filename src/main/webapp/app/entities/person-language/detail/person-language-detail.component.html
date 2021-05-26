@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personLanguage">
+      <h2 data-cy="personLanguageDetailsHeading"><span jhiTranslate="myApp.personLanguage.detail.title">Person Language</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personLanguage.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personLanguage.languageCode">Language Code</span></dt>
+        <dd>
+          <span>{{ personLanguage.languageCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personLanguage.languageUsageCode">Language Usage Code</span></dt>
+        <dd>
+          <span>{{ personLanguage.languageUsageCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.personLanguage.preferredLanguage">Preferred Language</span></dt>
+        <dd>
+          <span>{{ personLanguage.preferredLanguage }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/person-language', personLanguage.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

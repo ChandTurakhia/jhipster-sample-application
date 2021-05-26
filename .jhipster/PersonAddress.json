@@ -1,0 +1,42 @@
+{
+  "name": "PersonAddress",
+  "fields": [
+    {
+      "fieldName": "addressTypeCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validFrom",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "validTo",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "personAddress",
+      "relationshipName": "person"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "addressHeader",
+      "otherEntityRelationshipName": "personAddress",
+      "relationshipName": "addressHeader",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "person_address",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["myApp"],
+  "changelogDate": "20210526161453"
+}

@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-location-header-heading"
+        data-cy="LocationHeaderCreateUpdateHeading"
+        jhiTranslate="myApp.locationHeader.home.createOrEditLabel"
+      >
+        Create or edit a Location Header
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.locationHeader.latitude" for="field_latitude">Latitude</label>
+          <input type="number" class="form-control" name="latitude" id="field_latitude" data-cy="latitude" formControlName="latitude" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.locationHeader.longitude" for="field_longitude">Longitude</label>
+          <input type="number" class="form-control" name="longitude" id="field_longitude" data-cy="longitude" formControlName="longitude" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.locationHeader.elevation" for="field_elevation">Elevation</label>
+          <input type="number" class="form-control" name="elevation" id="field_elevation" data-cy="elevation" formControlName="elevation" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="myApp.locationHeader.addressHeader" for="field_addressHeader"
+            >Address Header</label
+          >
+          <select
+            class="form-control"
+            id="field_addressHeader"
+            data-cy="addressHeader"
+            name="addressHeader"
+            formControlName="addressHeader"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                addressHeaderOption.id === editForm.get('addressHeader')!.value?.id
+                  ? editForm.get('addressHeader')!.value
+                  : addressHeaderOption
+              "
+              *ngFor="let addressHeaderOption of addressHeadersCollection; trackBy: trackAddressHeaderById"
+            >
+              {{ addressHeaderOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

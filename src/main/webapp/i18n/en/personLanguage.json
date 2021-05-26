@@ -1,0 +1,27 @@
+{
+  "myApp": {
+    "personLanguage": {
+      "home": {
+        "title": "Person Languages",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Person Language",
+        "createOrEditLabel": "Create or edit a Person Language",
+        "notFound": "No Person Languages found"
+      },
+      "created": "A new Person Language is created with identifier {{ param }}",
+      "updated": "A Person Language is updated with identifier {{ param }}",
+      "deleted": "A Person Language is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Person Language {{ id }}?"
+      },
+      "detail": {
+        "title": "Person Language"
+      },
+      "id": "ID",
+      "languageCode": "Language Code",
+      "languageUsageCode": "Language Usage Code",
+      "preferredLanguage": "Preferred Language",
+      "person": "Person"
+    }
+  }
+}

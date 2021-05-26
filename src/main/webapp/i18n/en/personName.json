@@ -1,0 +1,34 @@
+{
+  "myApp": {
+    "personName": {
+      "home": {
+        "title": "Person Names",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Person Name",
+        "createOrEditLabel": "Create or edit a Person Name",
+        "notFound": "No Person Names found"
+      },
+      "created": "A new Person Name is created with identifier {{ param }}",
+      "updated": "A Person Name is updated with identifier {{ param }}",
+      "deleted": "A Person Name is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Person Name {{ id }}?"
+      },
+      "detail": {
+        "title": "Person Name"
+      },
+      "id": "ID",
+      "personId": "Person Id",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "secondLastName": "Second Last Name",
+      "preferredName": "Preferred Name",
+      "prefixCode": "Prefix Code",
+      "suffixCode": "Suffix Code",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "person": "Person"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "myApp": {
+    "personAddress": {
+      "home": {
+        "title": "Person Addresses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Person Address",
+        "createOrEditLabel": "Create or edit a Person Address",
+        "notFound": "No Person Addresses found"
+      },
+      "created": "A new Person Address is created with identifier {{ param }}",
+      "updated": "A Person Address is updated with identifier {{ param }}",
+      "deleted": "A Person Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Person Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Person Address"
+      },
+      "id": "ID",
+      "addressTypeCode": "Address Type Code",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "person": "Person",
+      "addressHeader": "Address Header"
+    }
+  }
+}
